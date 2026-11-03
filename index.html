@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shrouk Elkot – Data Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Newsreader:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#dfcfbd;--fg:#584635;--soft:#d3c1ac;--card:#e9dccb;--line:rgba(88,70,53,.28);
+--head:'Bricolage Grotesque',system-ui,sans-serif;--serif:'Newsreader',Georgia,serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.6 var(--serif)}
+a{color:inherit}
+h1,h2,h3{font-family:var(--head);margin:0;line-height:1.1}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:4px 18px;padding:12px 5vw;overflow-x:auto;font:600 14px var(--head);white-space:nowrap}
+nav a{text-decoration:none;opacity:.75}nav a:hover,nav a:focus-visible{opacity:1;text-decoration:underline}
+nav b{margin-right:auto}
+section{min-height:calc(100vh - 50px);padding:80px 5vw;display:flex;flex-direction:column;justify-content:center;max-width:1100px;margin:auto}
+section h2{font-size:clamp(32px,5vw,52px);margin-bottom:32px}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(44px,8vw,92px);font-weight:800;letter-spacing:-.03em}
+.role{font:600 22px var(--head);margin:16px 0 8px}
+.headline{font-size:22px;max-width:30ch}
+.slogan{font-style:italic;margin:14px 0 28px;opacity:.85}
+.btn{display:inline-block;padding:12px 22px;border:2px solid var(--fg);border-radius:40px;font:600 15px var(--head);text-decoration:none;margin-right:10px}
+.btn.fill{background:var(--fg);color:var(--bg)}
+.btn:hover,.btn:focus-visible{background:var(--fg);color:var(--bg)}.btn.fill:hover{background:transparent;color:var(--fg)}
+.photo{width:100%;max-width:380px;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 24px 24px;border:3px solid var(--fg);background:var(--soft);justify-self:center}
+.about p{font-size:22px;max-width:44ch;margin:0 0 14px}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:10px;font-family:var(--head)}
+.facts div{border-left:3px solid var(--fg);padding-left:12px}.facts b{display:block;font-size:26px}
+.skgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.sk{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.sk h3{font-size:19px;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:7px 14px;font:600 14px var(--head)}
+.lg{width:28px;height:28px;border-radius:7px;display:grid;place-items:center;color:#fff;font:800 11px var(--head);letter-spacing:-.02em}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.tab{font:600 15px var(--head);padding:10px 20px;border-radius:40px;border:2px solid var(--fg);background:transparent;color:var(--fg);cursor:pointer}
+.tab[aria-selected=true]{background:var(--fg);color:var(--bg)}
+.pgrid{display:none;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.pgrid.on{display:grid}
+.proj{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none}
+.proj:hover,.proj:focus-visible{outline:3px solid var(--fg)}
+.proj svg{width:100%;height:auto;display:block;border-bottom:1px solid var(--line)}
+.pb{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pb h3{font-size:21px}.pb p{margin:0;font-size:16.5px}
+.tools{display:flex;flex-wrap:wrap;gap:6px}.tools span{font:600 12px var(--head);border:1px solid var(--fg);border-radius:20px;padding:2px 10px}
+.res{font-size:15.5px;border-top:1px dashed var(--line);padding-top:10px}
+.go{margin-top:auto;font:600 14px var(--head)}
+.tl{display:grid;gap:18px}
+.row{display:grid;grid-template-columns:64px 1fr;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.logo{width:64px;height:64px;border-radius:14px;background:var(--fg);color:var(--bg);display:grid;place-items:center;font:800 20px var(--head)}
+.row h3{font-size:20px}.meta{font:600 14px var(--head);opacity:.8;margin:2px 0 8px}
+.row ul{margin:0;padding-left:20px;font-size:16.5px}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.contact a{display:block;padding:20px;border:2px solid var(--fg);border-radius:16px;text-decoration:none;font:600 18px var(--head);overflow-wrap:anywhere}
+.contact a small{display:block;font:400 14px var(--serif);opacity:.8}
+.contact a:hover,.contact a:focus-visible{background:var(--fg);color:var(--bg)}
+footer{text-align:center;padding:24px;font-size:14px;opacity:.7}
+:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.photo{max-width:260px;order:-1}section{padding:56px 5vw}.row{grid-template-columns:48px 1fr}.logo{width:48px;height:48px;font-size:16px}}
+</style>
+</head>
+<body>
+<nav><b>Shrouk Elkot</b><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#training">Training</a><a href="#contact">Contact</a></nav>
+
+<section id="home" class="hero">
+<div>
+<h1>Shrouk Elkot</h1>
+<div class="role">Data Engineer</div>
+<p class="headline">I build reliable, scalable pipelines that turn raw data into insight.</p>
+<p class="slogan">Turn data into impact.</p>
+<a class="btn fill" href="#projects">See my projects</a><a class="btn" href="#contact">Get in touch</a>
+</div>
+<!-- Replace the src below with your photo, e.g. src="me.jpg" -->
+<img class="photo" id="photo" alt="Portrait of Shrouk Ahmed Elkot" src="me.jpg">
+</section>
+
+<section id="about" class="about">
+<h2>About</h2>
+<p>I'm a Communication and Information Engineering graduate who builds ETL/ELT and real-time data pipelines with Python, SQL, PySpark and Azure.</p>
+<p>I work with Lakehouse architecture, orchestration, data quality and CI/CD, and I care about solutions that stay reliable as data grows.</p>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="skgrid" id="skgrid"></div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div id="pg"></div>
+</section>
+
+<section id="experience">
+<h2>Work experience</h2>
+<div class="tl" id="exp"></div>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<div class="row"><div class="logo"><img src="shots/zewail_logo.png" alt="Zewail City logo" style="width:100%;height:100%;object-fit:contain;border-radius:12px;background:#fff"></div><div>
+<h3>B.Sc. in Communication and Information Engineering</h3>
+<div class="meta">University of Science and Technology, Zewail City (UST-ZC), Giza · Graduated 2026</div>
+<ul><li>School of Engineering · GPA 3.26 / 4</li><li>Bachelor's Degree Scholarship, 2021–2026</li></ul></div></div>
+</section>
+
+<section id="training">
+<h2>Training</h2>
+<div class="tl" id="trn"></div>
+</section>
+
+<section id="contact">
+<h2>Let's talk</h2>
+<div class="contact">
+<a href="mailto:shroukahmed0019@gmail.com"><small>Email</small>shroukahmed0019@gmail.com</a>
+<a href="https://www.linkedin.com/in/shrouk-elkot" target="_blank" rel="noopener"><small>LinkedIn</small>shrouk-elkot</a>
+<a href="https://github.com/ShroukElkot" target="_blank" rel="noopener"><small>GitHub</small>ShroukElkot</a>
+<a href="tel:+201094117093"><small>Phone</small>(+20) 1094117093</a>
+</div>
+<p style="margin-top:22px">Based in Giza, Egypt.</p>
+</section>
+<footer>© 2026 Shrouk Elkot</footer>
+
+<script>
+const GH="https://github.com/ShroukElkot"; // swap each project's `url` for its repo link
+const $=id=>document.getElementById(id);
+const skills=[
+["Data engineering & streaming",[["PySpark","Py","#E25A1C"],["Apache Spark","Sp","#E25A1C"],["Databricks","Db","#FF3621"],["Delta Lake","Δ","#00ADD4"],["Delta Live Tables","DLT","#FF3621"],["Apache Kafka","Kf","#231F20"],["Event Hubs","EH","#0078D4"],["Data Vault","DV","#6B4F3A"]]],
+["Cloud, DevOps & DataOps",[["Azure","Az","#0078D4"],["Azure Synapse","Sy","#0078D4"],["Databricks Workflows","Wf","#FF3621"],["Git / GitHub","Git","#F05032"],["CI/CD","CI","#2C7A4B"],["Data Quality Testing","DQ","#7A4E9C"]]],
+["Languages & APIs",[["Python","Py","#3776AB"],["SQL","SQL","#336791"],["REST APIs","API","#0F766E"]]],
+["Tools & environments",[["VS Code","VS","#007ACC"],["Jupyter","Jp","#F37626"],["Google Colab","Co","#E8710A"],["Power BI","BI","#C79A00"]]],
+["Core concepts",[["Lakehouse (Medallion)","Lh","#584635"],["Data Modeling","DM","#584635"],["Data Warehousing","DW","#584635"],["Big Data Processing","BD","#584635"],["Data Architecture","DA","#584635"]]]];
+$("skgrid").innerHTML=skills.map(([t,l])=>`<div class="sk"><h3>${t}</h3><div class="chips">${l.map(([n,s,c])=>`<span class="chip">${n}</span>`).join("")}</div></div>`).join("");
+
+const groups=[
+["Data engineering",[
+{n:"End-to-End Streaming Data Pipeline",d:"A real-time data lakehouse on Azure Databricks that ingests live cryptocurrency data from APIs and Event Hubs into curated Gold-layer views.",t:["Databricks","PySpark","Event Hubs","Azure Synapse","Power BI"],r:"Z-score anomaly detection on sliding windows, with aggregated metrics loaded into Synapse for live Power BI dashboards.",c:"#0078D4",i:"STREAM", img:"shots/depi_proj.png", url:"https://github.com/ShroukElkot/End-to-End-Streaming-Data-Pipeline-"},
+{n:"Google Play Store Analytics",d:"A scalable big data pipeline for app analytics covering ETL, large-scale EDA and KPI aggregation, built on the Medallion architecture.",t:["Apache Spark","Delta Lake","Databricks"],r:"Spark optimizations that improved performance and handled data skew across install and rating datasets.",c:"#2C7A4B",i:"PLAY", img:"shots/bigdata_proj.png", url:"https://github.com/ShroukElkot/Google-play-store-analytics"}]],
+["AI & machine learning",[
+{n:"AI for Cooperative Autonomous Vehicles (V2V)",d:"Graduation project: vehicles predict surrounding trajectories and share real-time driving information over V2V communication.",t:["SUMO","OMNeT++","Veins","Deep learning"],r:"Multi-layer safety design with maneuver classification, uncertainty-aware evaluation and a rule-based emergency controller.",c:"#7A4E9C",i:"V2V", img:"shots/grad_proj.png", url:"https://github.com/ShroukElkot/AI-for-Cooperative-Autonomous-Vehicles-V2V-Communication-"},
+{n:"Egyptian Arabic Speech Chatbot",d:"An end-to-end Egyptian Arabic voice chatbot with a dialect-aware normalization pipeline.",t:["Whisper (ASR)","Qwen 3B LLM","XTTS (TTS)"],r:"Fine-tuned Arabic TTS models on Egyptian dialect data, evaluated with WER and MOS.",c:"#C2571A",i:"VOICE", img:"shots/speech_proj.png", url:"https://github.com/ShroukElkot/speech_egyptian_chatbot"},
+{n:"Sentiment Analysis with Metadata-Enriched Tweets",d:"A deep learning model that classifies tweets as positive, neutral or negative using text plus metadata.",t:["GloVe","CNN","BiLSTM","Soft attention"],r:"Dense and Dropout layers with softmax give robust generalization on noisy social media text.",c:"#B8326B",i:"TWEET", img:"shots/nlp_proj.png", url:"https://github.com/ShroukElkot/Sentiment-Analysis"}]],
+["Cybersecurity",[
+{n:"Threat Intelligence & Phishing Detection Tool",d:"A threat intelligence platform that combines indicator enrichment, ML phishing detection and attack campaign visualization. Mentored by ZINAD.",t:["WHOIS / DNS / GeoIP / ASN","Machine learning","Dashboards"],r:"Indicators are correlated into attack campaigns and monitored through visual dashboards.",c:"#A12A2A",i:"CTI", img:"shots/zinad_proj.png", url:"https://github.com/ShroukElkot/ZINAD_Project"}]]];
+const shot=(c,i)=>`<svg viewBox="0 0 400 190" role="img" aria-label="${i} project preview"><rect width="400" height="190" fill="${c}"/><g fill="#fff" opacity=".22"><rect x="24" y="24" width="352" height="18" rx="9"/><rect x="24" y="58" width="160" height="108" rx="10"/><rect x="198" y="58" width="178" height="48" rx="10"/><rect x="198" y="118" width="178" height="48" rx="10"/></g><text x="104" y="120" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="26" fill="#fff">${i}</text></svg>`;
+$("tabs").innerHTML=groups.map((g,k)=>`<button class="tab" role="tab" aria-selected="${!k}" data-k="${k}">${g[0]}</button>`).join("");
+$("pg").innerHTML=groups.map((g,k)=>`<div class="pgrid${k?"":" on"}" data-k="${k}">${g[1].map(p=>`<a class="proj" href="${p.url||GH}" target="_blank" rel="noopener">${p.img?`<img src="${p.img}" alt="${p.n} screenshot" style="width:100%;aspect-ratio:400/190;object-fit:cover;display:block;border-bottom:1px solid var(--line)">`:shot(p.c,p.i)}<div class="pb"><h3>${p.n}</h3><p>${p.d}</p><div class="tools">${p.t.map(x=>`<span>${x}</span>`).join("")}</div><div class="res"><b>Result:</b> ${p.r}</div><span class="go">View on GitHub ↗</span></div></a>`).join("")}</div>`).join("");
+$("tabs").onclick=e=>{const b=e.target.closest(".tab");if(!b)return;document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected",t===b));document.querySelectorAll(".pgrid").forEach(g=>g.classList.toggle("on",g.dataset.k===b.dataset.k))};
+
+//const row=(l,t,m,li)=>`<div class="row"><div class="logo">${l}</div><div><h3>${t}</h3><div class="meta">${m}</div><ul>${li.map(x=>`<li>${x}</li>`).join("")}</ul></div></div>`;
+//$("exp").innerHTML=[
+//row("NTI","DataOps Engineer Intern","National Telecommunication Institute (NTI) HireReady, Giza · Oct 2026 – Jan 2027",["Developed data pipelines with Python, advanced SQL and ETL/ELT techniques.","Orchestrated and monitored workflows with Databricks Workflows and Delta Live Tables, with automated data quality tests and data governance standards.","Processed large datasets with Apache Spark and PySpark, and explored real-time streaming with Apache Kafka."]),
+//row("CA","Coding Coach (Part-Time)","Coach Academy, Remote · May 2024 – Sept 2026",["Taught children aged 6–11 programming, AI, mobile app and web development.","Delivered the AI &amp; smart games curriculum for the Code Camp initiative."]),
+//row("iS","DEMI Coding Instructor","iSchool, Cairo · Jun 2024 – Aug 2026",["Taught grades 4–6 in the Digital Egypt Marvels Initiative: Python, AI, mobile apps and 2D games, online and offline."]),
+//row("Al","DECI Coding Instructor","Almentor, Cairo · Dec 2024 – Jul 2025",["Taught block programming, AI and mobile apps in the Digital Egypt Cubs Initiative.","Led a summer entrepreneurship camp where students built and presented their own projects."])].join("");
+const row=(l,t,m,li)=>`<div class="row"><div class="logo">${/\.(png|jpe?g|svg|webp)$/i.test(l)?`<img src="${l}" alt="" style="width:100%;height:100%;object-fit:contain;border-radius:12px;background:#fff">`:l}</div><div><h3>${t}</h3><div class="meta">${m}</div><ul>${li.map(x=>`<li>${x}</li>`).join("")}</ul></div></div>`;
+$("exp").innerHTML=[
+row("shots/nti_logo.png","DataOps Engineer Intern","National Telecommunication Institute (NTI) HireReady, Giza · Oct 2026 – Jan 2027",["Developed data pipelines with Python, advanced SQL and ETL/ELT techniques.","Orchestrated and monitored workflows with Databricks Workflows and Delta Live Tables, with automated data quality tests and data governance standards.","Processed large datasets with Apache Spark and PySpark, and explored real-time streaming with Apache Kafka."]),
+row("shots/ca_logo.png","Coding Coach (Part-Time)","Coach Academy, Remote · May 2024 – Sept 2026",["Taught children aged 6–11 programming, AI, mobile app and web development.","Delivered the AI &amp; smart games curriculum for the Code Camp initiative."]),
+row("shots/ischool_logo.png","DEMI Coding Instructor","iSchool, Cairo · Jun 2024 – Aug 2026",["Taught grades 4–6 in the Digital Egypt Marvels Initiative: Python, AI, mobile apps and 2D games, online and offline."]),
+row("shots/almentor_logo.png","DECI Coding Instructor","Almentor, Cairo · Dec 2024 – Jul 2025",["Taught block programming, AI and mobile apps in the Digital Egypt Cubs Initiative.","Led a summer entrepreneurship camp where students built and presented their own projects."])].join("");
+$("trn").innerHTML=[
+row("shots/depi_logo.png","Microsoft Data Engineering Trainee","Digital Egypt Pioneers Initiative (DEPI), Hybrid · Nov 2025 – Jun 2026",["Built foundational end-to-end ETL/ELT pipelines with SQL and Python, pulling from internal sources and third-party APIs.","Applied big data processing, modern data architecture, Azure and DevOps practices.","Integrated AI techniques into a pipeline in the capstone project."]),
+].join("");
+</script>
+</body>
+</html>
